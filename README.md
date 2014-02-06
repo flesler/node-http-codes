@@ -1,7 +1,7 @@
 # node-http-codes
 
 ## Description
-Map of HTTP status messages to codes based on [Node's built-in (inverse) map](http://nodejs.org/api/http.html#http_http_status_codes)
+Map of HTTP status messages to codes based on [Node's built-in map](http://nodejs.org/api/http.html#http_http_status_codes) in reverse.
 
 ## Installation
 Using npm:
@@ -11,7 +11,7 @@ Using npm:
 ## Why use this over others like it
 
 - It's ultra simple, doesn't get simpler than this
-- It's based on [Node's built-in (inverse) map](http://nodejs.org/api/http.html#http_http_status_codes) meaning it will auto-update if the built-in does.
+- It's based on [Node's built-in map](http://nodejs.org/api/http.html#http_http_status_codes) in reverse meaning it will auto-update if the built-in does.
 - It doesn't depend on other libraries and is not coded on CoffeeScript
  
 ## The actual map
