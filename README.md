@@ -1,5 +1,4 @@
 # node-http-codes
-======================
 
 ## Description
 Map of HTTP status messages to codes based on [Node's built-in (inverse) map](http://nodejs.org/api/http.html#http_http_status_codes)
