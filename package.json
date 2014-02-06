@@ -1,0 +1,30 @@
+{
+  "name": "http-codes",
+  "author": "Ariel Flesler <aflesler@gmail.com>",
+  "version": "1.0.0",
+  "description": "Map of HTTP status messages to codes based on Node's built-in (inverse) map",
+  "main": "./index.js",
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/flesler/node-http-codes.git"
+  },
+  "keywords": [
+    "http",
+    "status",
+    "codes",
+    "messages",
+    "builtin",
+    "map",
+    "javascript",
+    "nodejs",
+    "node"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/flesler/node-http-codes/issues"
+  },
+  "scripts": {
+    "test": "node test/index"
+  }
+}
