@@ -1,7 +1,7 @@
 {
     "name": "http-status-codes",
     "author": "Andres Jorquera <jorquera.ad@gmail.com>",
-    "version": "1.1.0",
+    "version": "1.2.0",
     "description": "Map of HTTP status messages to codes based on Node's built-in (inverse) map",
     "main": "./build/http-status-codes.json",
     "keywords": [
