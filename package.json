@@ -1,14 +1,7 @@
 {
   "name": "http-codes",
-  "author": "Ariel Flesler <aflesler@gmail.com>",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Map of HTTP status messages to codes based on Node's built-in (inverse) map",
-  "main": "./index.js",
-  "dependencies": {},
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/flesler/node-http-codes.git"
-  },
   "keywords": [
     "http",
     "status",
@@ -20,11 +13,50 @@
     "nodejs",
     "node"
   ],
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/flesler/node-http-codes/issues"
+  "author": {
+    "name": "Ariel Flesler",
+    "url": "https://github.com/flesler"
   },
+  "license": "MIT",
+  "homepage": "https://github.com/flesler/node-http-codes",
+  "bugs": "https://github.com/flesler/node-http-codes/issues",
+  "repository": "git://github.com/flesler/node-http-codes",
+  "type": "module",
+  "main": "./dist/http-codes.cjs",
+  "module": "./dist/http-codes.js",
+  "types": "./dist/http-codes.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/http-codes.d.ts",
+      "import": "./dist/http-codes.js",
+      "require": "./dist/http-codes.cjs"
+    }
+  },
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "test": "node test/index"
+    "build": "tsup",
+    "test": "npm run test:types && npm run test:unit",
+    "test:types": "tsc -p tsconfig.test.json --noEmit",
+    "test:unit": "vitest run",
+    "test:watch": "vitest --watch",
+    "lint": "eslint --cache --cache-strategy content 'src/**/*.ts' '*.ts'",
+    "lint:fix": "npm run lint -- --fix",
+    "prepublishOnly": "npm run build"
+  },
+  "engines": {
+    "node": ">=14"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.21.0",
+    "@stylistic/eslint-plugin": "^4.0.1",
+    "@types/node": "^26.1.2",
+    "@typescript-eslint/eslint-plugin": "^8.24.1",
+    "@typescript-eslint/parser": "^8.24.1",
+    "eslint": "^9.21.0",
+    "tsup": "^8.4.0",
+    "typescript": "^5.8.2",
+    "vitest": "^3.0.7"
   }
 }

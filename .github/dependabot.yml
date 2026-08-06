@@ -1,0 +1,14 @@
+# Dependabot disabled — deps are updated manually on maintenance/modernization releases.
+# open-pull-requests-limit: 0 blocks version-update PRs (org defaults cannot re-enable them).
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: monthly
+    open-pull-requests-limit: 0
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: monthly
+    open-pull-requests-limit: 0
