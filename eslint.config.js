@@ -5,14 +5,14 @@ import tsParser from '@typescript-eslint/parser'
 
 export default [
   {
-    ignores: ['dist/', 'node_modules/', '*.tsbuildinfo', '.eslintcache'],
+    ignores: ['dist/', 'node_modules/', '*.tsbuildinfo', '.eslintcache', 'src/**/*.generated.ts'],
   },
 
   eslintJs.configs.recommended,
   stylistic.configs.recommended,
 
   {
-    files: ['src/**/*.ts', '*.ts'],
+    files: ['src/**/*.ts', 'bin/**/*.ts', '*.ts'],
     languageOptions: {
       parser: tsParser,
       parserOptions: {

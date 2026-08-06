@@ -40,7 +40,7 @@ TypeScript users with `@types/http-codes` who write `import { OK } from 'http-co
 ## Known non-breaking changes (inherent to design)
 
 - **Key set varies by Node version** — e.g. `EARLY_HINTS` on newer Node, `MOVED_TEMPORARILY` renamed to `FOUND`. Same behavior on 1.0.0 when Node updates.
-- **Built-in types** — 2.0.0 ships `dist/http-codes.d.ts`. `@types/http-codes` can be removed; types may differ slightly (`Record<string, number>` vs per-key named exports).
+- **Built-in types** — 2.0.0 ships `dist/http-codes.d.ts` with literal keys generated from Node at build time (`npm run generate-types`), plus `Record<string, number>` for keys added on newer Node at runtime. `@types/http-codes` can be removed.
 
 ## How we verified dependents
 

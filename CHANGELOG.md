@@ -1,5 +1,15 @@
 # Changelog
 
+## 2.1.0
+
+### Added
+
+- Literal TypeScript types generated from Node `STATUS_CODES` at build time (`bin/generate-types.ts`), with `Record<string, number>` for forward-compatible keys
+
+### Tooling
+
+- `bin/tsconfig.json` and split `test:types:bin` for script typechecking
+
 ## 2.0.0
 
 ### Breaking changes (packaging only)

@@ -1,6 +1,6 @@
 {
   "name": "http-codes",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "Map of HTTP status messages to codes based on Node's built-in (inverse) map",
   "keywords": [
     "http",
@@ -36,12 +36,15 @@
     "dist"
   ],
   "scripts": {
-    "build": "tsup",
+    "generate-types": "tsx bin/generate-types.ts",
+    "build": "npm run generate-types && tsup",
     "test": "npm run test:types && npm run test:unit",
-    "test:types": "tsc -p tsconfig.test.json --noEmit",
+    "test:types:test": "tsc -p tsconfig.test.json --noEmit",
+    "test:types:bin": "tsc -p bin/tsconfig.json --noEmit",
+    "test:types": "npm run test:types:test && npm run test:types:bin",
     "test:unit": "vitest run",
     "test:watch": "vitest --watch",
-    "lint": "eslint --cache --cache-strategy content 'src/**/*.ts' '*.ts'",
+    "lint": "eslint --cache --cache-strategy content '{src,bin}/**/*.ts' '*.ts'",
     "lint:fix": "npm run lint -- --fix",
     "prepublishOnly": "npm run build"
   },
@@ -56,6 +59,7 @@
     "@typescript-eslint/parser": "^8.24.1",
     "eslint": "^9.21.0",
     "tsup": "^8.4.0",
+    "tsx": "^4.19.3",
     "typescript": "^5.8.2",
     "vitest": "^3.0.7"
   }

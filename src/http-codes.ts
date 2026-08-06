@@ -1,9 +1,8 @@
 import { STATUS_CODES } from 'node:http'
-
-export type HttpCodes = Record<string, number>
+import type { HttpCodes } from './http-codes.generated.js'
 
 function buildHttpCodes(): HttpCodes {
-  const result: HttpCodes = {}
+  const result = {} as HttpCodes
   for (const code in STATUS_CODES) {
     const message = STATUS_CODES[code]
     if (!message) {
@@ -16,4 +15,5 @@ function buildHttpCodes(): HttpCodes {
 }
 
 const httpCodes = buildHttpCodes()
+export type { HttpCodes } from './http-codes.generated.js'
 export default httpCodes
