@@ -54,6 +54,14 @@ The exact set of keys depends on your Node version. Run `npm test` to print the 
 
 2.0.0 is a major release because of packaging (TypeScript, `dist/`, dual ESM/CJS, built-in types, tooling) and the long gap since 1.0.0 — not because the `require()` shape changed.
 
+If you used `@types/http-codes`, remove it — types ship with the package since 2.0.0:
+
+```bash
+npm uninstall @types/http-codes
+```
+
+Built-in types use a default import (`import codes from 'http-codes'`), not the named exports `@types/http-codes` declared. Runtime `require('http-codes').OK` is unchanged.
+
 Full compatibility matrix, dependent-audit commands, and smoke tests: [docs/backwards-compatibility.md](docs/backwards-compatibility.md).
 
 ---
