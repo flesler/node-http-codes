@@ -1,3 +1,5 @@
+import { readFileSync, writeFileSync } from 'node:fs'
+import { join } from 'node:path'
 import { defineConfig } from 'tsup'
 
 export default defineConfig({
@@ -11,10 +13,7 @@ export default defineConfig({
   splitting: false,
   treeshake: true,
   minify: true,
-  async onSuccess() {
-    const { readFileSync, writeFileSync } = await import('node:fs')
-    const { join } = await import('node:path')
-
+  onSuccess() {
     // 1.x compat: tsup wraps default export under .default; 1.0.0 exposed codes on module.exports directly
     const cjsFile = join('dist', 'http-codes.cjs')
     const cjsPatch = ';{const c=module.exports.default;if(c){module.exports=c;}}'
